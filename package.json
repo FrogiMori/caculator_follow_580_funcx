@@ -1,0 +1,26 @@
+{
+  "name": "rea_casio580vnx",
+  "version": "1.0.0",
+  "description": "Casio fx-580VN X Web Emulator",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "casio",
+    "fx-580vnx",
+    "emulator",
+    "classwiz"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0"
+  }
+}

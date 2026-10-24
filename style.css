@@ -1,0 +1,362 @@
+/* ==========================================================================
+   Casio fx-580VN X Web App - Phong Cách Giao Diện Máy Tính Chuẩn Xác
+   ========================================================================== */
+
+:root {
+  --casio-case-bg: #1e2229;
+  --casio-case-border: #121418;
+  --casio-lcd-bg: #c7d6c5;
+  --casio-lcd-text: #1a261c;
+  --casio-btn-dark: #2d333b;
+  --casio-btn-num: #eaeef2;
+  --casio-btn-num-text: #111827;
+  --casio-btn-op: #374151;
+  --casio-btn-op-text: #f9fafb;
+  --casio-btn-del: #4b5563;
+  --casio-btn-ac: #374151;
+  --casio-label-shift: #d97706; /* Màu vàng cam đặc trưng của nhãn Shift Casio */
+  --casio-label-alpha: #dc2626; /* Màu đỏ của nhãn Alpha Casio */
+  --casio-dpad-metal: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 12px;
+}
+
+/* Khung thân vỏ máy tính Casio fx-580VN X */
+.casio-case {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, #282e38 0%, #1a1e24 100%);
+  border: 3px solid #333a46;
+  border-radius: 28px;
+  padding: 20px 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Phần đầu máy: Logo & Solar Cell */
+.casio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.casio-branding {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.casio-logo {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #f1f5f9;
+}
+
+.casio-model {
+  font-size: 13px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.casio-subtext {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #38bdf8;
+}
+
+.solar-panel {
+  width: 76px;
+  height: 22px;
+  background: #2a1b1b;
+  border: 1px solid #4a3434;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.solar-grid {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #3d2626,
+    #3d2626 18px,
+    #5a3a3a 19px,
+    #5a3a3a 20px
+  );
+}
+
+/* Khung màn hình LCD */
+.casio-screen-frame {
+  background: #111418;
+  border: 2px solid #282f3a;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.casio-lcd-container {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--casio-lcd-bg);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.casio-lcd-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Bố cục bàn phím 50 phím */
+.casio-keypad-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.keypad-row {
+  display: grid;
+  gap: 6px;
+  align-items: center;
+}
+
+.keypad-row-top {
+  grid-template-columns: 1fr 1fr 1.4fr 1fr 1fr;
+  align-items: center;
+}
+
+.keypad-row-sci-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.keypad-row-sci-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.keypad-row-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.keypad-numpad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* Cụm phím D-Pad điều hướng */
+.dpad-cluster {
+  display: grid;
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+  width: 84px;
+  height: 64px;
+  margin: 0 auto;
+  background: radial-gradient(circle, #475569 0%, #1e293b 100%);
+  border-radius: 50%;
+  border: 2px solid #64748b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  padding: 2px;
+}
+
+.dpad-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #e2e8f0 !important;
+  font-size: 11px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.dpad-up { grid-area: up; }
+.dpad-down { grid-area: down; }
+.dpad-left { grid-area: left; }
+.dpad-right { grid-area: right; }
+
+/* Nút bấm Casio */
+.casio-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.key-shift-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--casio-label-shift);
+  position: absolute;
+  top: -12px;
+  left: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.key-alpha-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--casio-label-alpha);
+  position: absolute;
+  top: -12px;
+  right: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.casio-btn {
+  width: 100%;
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.05s ease-out;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  touch-action: manipulation;
+}
+
+.casio-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Các phân loại nút bấm */
+.btn-shift {
+  background: #334155;
+  color: var(--casio-label-shift);
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.btn-alpha {
+  background: #334155;
+  color: var(--casio-label-alpha);
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.btn-menu, .btn-on {
+  background: #334155;
+  color: #f8fafc;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.btn-sci {
+  background: #1f2937;
+  color: #f3f4f6;
+  font-size: 11px;
+  height: 34px;
+}
+
+.btn-num {
+  background: var(--casio-btn-num);
+  color: var(--casio-btn-num-text);
+  font-size: 16px;
+  font-weight: 700;
+  height: 42px;
+}
+
+.btn-op {
+  background: var(--casio-btn-op);
+  color: var(--casio-btn-op-text);
+  font-size: 16px;
+  height: 42px;
+}
+
+.btn-del {
+  background: #475569;
+  color: #f8fafc;
+  font-size: 12px;
+  font-weight: 800;
+  height: 42px;
+}
+
+.btn-ac {
+  background: #334155;
+  color: #fbbf24;
+  font-size: 12px;
+  font-weight: 800;
+  height: 42px;
+}
+
+.btn-equals {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* Khối chân máy */
+.casio-footer {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.casio-edition {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #64748b;
+}
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .casio-case {
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    border: none;
+    padding: 12px 8px;
+    gap: 10px;
+  }
+
+  .casio-btn {
+    height: 44px; /* Chuẩn 44px tối thiểu cho touch target WCAG */
+  }
+
+  .btn-sci {
+    height: 36px;
+    font-size: 10px;
+  }
+}
